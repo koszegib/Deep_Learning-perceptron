@@ -11,6 +11,7 @@ class Perceptron:
         self.num_inputs = num_inputs
         self.weights = weights
     
+    #method for weighted_sum
     def weigthed_sum(self, inputs):
         #create variable to store weighted sum
         weigthed_sum = 0
@@ -18,8 +19,16 @@ class Perceptron:
             weigthed_sum += self.weights[i] * inputs[i]
             
         return weigthed_sum
+    
+    #method for activation funciton
+    def activation(self, weighted_sum):
+        if weighted_sum >= 0:
+            return 1
+        else:
+            return -1
 
 # Creating the first instance of the Perceptron class (object)
 cool_perceptron = Perceptron()
 print(cool_perceptron.weigthed_sum([24, 55]))
+print(cool_perceptron.activation(103))
         
